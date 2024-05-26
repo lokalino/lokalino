@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Nama</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1>O Nama</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="about.html">O Nama</a></li>
+                <li><a href="services.html">Usluge</a></li>
+                <li><a href="#" id="contact-link">Kontakt</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Naša Priča</h2>
+            <p>Naša kompanija je osnovana 2000. godine i od tada pružamo vrhunske usluge u naftnoj industriji.</p>
+            <div id="map"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Naftna Kompanija. Sva prava zadržana.</p>
+        <a href="/home.html">Back to Home</a>
+    </footer>
+
+    <!-- Modal -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Kontaktirajte nas</h2>
+            <form id="contact-form">
+                <label for="name">Ime:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Poruka:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Pošalji</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize and add the map
+        function initMap() {
+            // The location of the company
+            const companyLocation = { lat: -25.344, lng: 131.036 };
+            // The map, centered at the company location
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 4,
+                center: companyLocation,
+            });
+            // The marker, positioned at the company location
+            const marker = new google.maps.Marker({
+                position: companyLocation,
+                map: map,
+            });
+        }
+
+        window.initMap = initMap;
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+</body>
+</html>
++
+#

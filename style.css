@@ -1,0 +1,311 @@
+/* Definisanje CSS varijabli za boje */
+:root {
+    --primary-color: #4CAF50; /* svetlo zelena */
+    --secondary-color: #fff; /* bela */
+    --accent-color: #ff9800; /* narandžasta */
+    --background-color: #f9f9f9; /* svetlo siva */
+    --text-color: #333; /* tamno siva */
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Opšti stilovi */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Zaglavlje */
+header, #main-header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 15px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+
+header h1, #main-header h1 {
+    margin: 0;
+    font-family: 'Pacifico', cursive; /* dodavanje malo više karaktera */
+}
+
+#main-header nav ul, nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+#main-header nav ul li, nav ul li {
+    list-style: none;
+    margin: 0 15px;
+}
+
+#main-header nav ul li a, nav ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+}
+
+#main-header nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Glavni sadržaj */
+main {
+    padding: 20px;
+    padding-top: 100px; /* Podešavanje za fiksno zaglavlje */
+}
+
+/* Sekcije */
+section {
+    margin-bottom: 20px;
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    box-shadow: var(--box-shadow);
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+/* Forme */
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+form button {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: var(--accent-color);
+}
+
+/* Slideshow */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.mySlides img:hover {
+    transform: scale(1.05);
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 18px;
+    transition: background-color 0.6s ease;
+    border-radius: var(--border-radius);
+    user-select: none;
+}
+
+.prev {
+    left: 0;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+.next {
+    right: 0;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Animacija za slideshow */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: 0.4;} 
+    to {opacity: 1;}
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: var(--secondary-color);
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Mapa */
+#map {
+    height: 400px;
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* Search bar */
+#search-bar {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* Animacija pri skrolovanju */
+.animate-on-scroll {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+}
+
+/* Testimonijali */
+#testimonials {
+    background-color: var(--background-color);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.testimonial {
+    border-left: 4px solid var(--accent-color);
+    margin: 10px 0;
+    padding-left: 10px;
+    font-style: italic;
+}
+
+/* Kalendar */
+#calendar {
+    padding: 20px;
+    background-color: var(--secondary-color);
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* Tim */
+#team {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+#team {
+    display: flex;
+    justify-content: center; /* Centriraj elemente horizontalno */
+    flex-wrap: wrap; /* Dozvoli prelamanje elemenata ako nema dovoljno mesta */
+    margin: 20px 0;
+}
+
+.team-member {
+    text-align: center;
+    margin: 10px;
+    flex: 1; /* Omogući elementima da rastu podjednako */
+    max-width: 200px; /* Ograniči maksimalnu širinu svakog člana tima */
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 100%; /* Napuni dostupan prostor u okviru maksimalne širine */
+    max-width: 150px; /* Ograniči maksimalnu širinu slike */
+    height: auto; /* Održi proporcije slike */
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.team-member img:hover {
+    transform: scale(1.1);
+}
